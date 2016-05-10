@@ -78,4 +78,9 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
+
+    <Exec Command="nuget pack CoreValue.SamlOwinService.csproj -Prop Configuration=Release"></Exec>
+
+  </Target>
 </Project>
